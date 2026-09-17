@@ -1,4 +1,4 @@
-FROM python:3.9-slim
+FROM python:3.13-slim
 
 WORKDIR /app
 
@@ -19,4 +19,4 @@ RUN python manage.py collectstatic --noinput
 
 EXPOSE 8000
 
-CMD ["gunicorn", "--bind", "0.0.0.0:8000", "backend.wsgi:application"]
+CMD ["gunicorn", "--bind", "0.0.0.0:8000", "core.wsgi:application"]
